@@ -1,0 +1,1 @@
+from . import shopify_store,setting_inherit

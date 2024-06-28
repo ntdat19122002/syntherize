@@ -27,6 +27,7 @@ export default {
   }
 }
 </script>
+<style src="./css/variable.css"></style>
 <style src="./css/main.css"></style>
 <style>
 .wrapper {

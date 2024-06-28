@@ -62,7 +62,7 @@ export default {
     data(){
         return{
             navbar_section:'rest-api',
-            rest_api_menu:['AccessScope']
+            rest_api_menu:['AccessScope','StorefrontAccessToken']
         }
     }
 };

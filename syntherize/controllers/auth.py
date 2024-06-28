@@ -11,7 +11,7 @@ import json
 from odoo.addons.portal.controllers.portal import CustomerPortal
 
 from odoo.http import request, _logger
-
+from ..config.scope import SCOPE
 
 class CustomerPortal(CustomerPortal):
     @odoo.http.route()
@@ -40,14 +40,7 @@ class AuthShopifyController(http.Controller):
                 # time_limit (Nếu có) và database.secret
                 state = 'abc'
                 redirect_uri = request.env['ir.config_parameter'].sudo().get_param('web.base.url') + "/shopify/syntherize/finalize"
-                scopes = [
-                    "read_products",
-                    "read_orders",
-                    "write_orders",
-                    'read_script_tags',
-                    'write_script_tags',
-                    'read_themes'
-                ]
+                scopes = SCOPE
 
                 newSession = shopify.Session(shop_url, api_version)
                 auth_url = newSession.create_permission_url(scopes, redirect_uri,state)
@@ -168,6 +161,15 @@ class AuthShopifyController(http.Controller):
 
     @http.route('/apps/syntherize/<string:components>/<string:components2>', auth="user", type="http", cors="*")
     def app_shopify_xero_branch2(self):
+        return self.render_ui()
+
+    @http.route('/apps/syntherize/<string:components>/<string:components2>/<string:components3>', auth="user", type="http", cors="*")
+    def app_shopify_xero_branch3(self):
+        return self.render_ui()
+
+    @http.route('/apps/syntherize/<string:components>/<string:components2>/<string:components3>/<string:components4>', auth="user",
+                type="http", cors="*")
+    def app_shopify_xero_branch4(self):
         return self.render_ui()
 
     def render_ui(self):

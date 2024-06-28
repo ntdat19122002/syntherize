@@ -1,3 +1,60 @@
 .content{
     width: 100%;
+    padding: 20px;
 }
+
+button{
+    cursor: pointer;
+}
+
+.shopify-api-method__header{
+    display: flex;
+    align-items: center;
+}
+
+.shopify-api-method__header__title{
+    font-size: 20px;
+    font-weight: 600;
+    margin-left: 10px;
+}
+
+.shopify-api-method__result_header{
+    padding: 5px;
+    width: 800px;
+    font-weight: 550;
+    min-height: 36px;
+    background: #263824;
+    border-radius: 5px 5px 0 0;
+    color: white;
+}
+
+.shopify-api-method__result_content{
+    padding: 5px;
+    width: 800px;
+    min-height: 36px;
+    background: #456742;
+    border-radius: 0 0 5px 5px;
+    color: white;
+}
+
+/* Start: Css cho các button gọi về API Shopify */
+.get-shopify-api-button{
+    background-color: var(--color-restget-background-default);
+    border-color: var(--color-restget-border-default);
+    color: var(--color-restget-text-default);
+
+    align-items: center;
+    border: 1px solid;
+    border-radius: var(--component-chip-default-container-border-radius);
+    display: inline-flex;
+    flex-direction: row;
+    flex-shrink: 0;
+    font: var(--font-mono-font-body-minor-base);
+    font-weight: 700;
+    height: var(--size-500);
+    justify-content: center;
+    min-width: 44px;
+    padding: 0 var(--size-100);
+    position: relative;
+}
+/* End: Css cho các button gọi về API Shopify */

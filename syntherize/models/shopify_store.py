@@ -22,6 +22,9 @@ class ShopifyShop(models.Model):
     # Todo: Thêm trường store domain 👌
     # Reply: Hiện tại shop_url đang lấy trường domain trên shopify
 
+    def get_store_by_current_user(self):
+        pass
+
     def init_shopify_session(self):
         api_version = self.env['ir.config_parameter'].sudo().get_param('syntherize.shopify_api_version')
         session = shopify.Session(self.shop_url, api_version, self.token)

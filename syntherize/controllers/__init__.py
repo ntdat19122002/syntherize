@@ -1,2 +1,2 @@
 from . import auth
-from .RestAPI import access_scope
+from .RestAPI import access

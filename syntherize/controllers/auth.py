@@ -35,9 +35,6 @@ class AuthShopifyController(http.Controller):
                 shopify.Session.setup(api_key=shopify_key, secret=shopify_secret)
 
                 shop_url = kw['shop']
-                # Todo: tạo state từ việc hash secret key với tên shop👌
-                # Reply: state dùng để tránh lỗi CSRF (tấn công giả mạo), odoo đã có sãn hàm tạo CSRF token từ session
-                # time_limit (Nếu có) và database.secret
                 state = 'abc'
                 redirect_uri = request.env['ir.config_parameter'].sudo().get_param('web.base.url') + "/shopify/syntherize/finalize"
                 scopes = SCOPE

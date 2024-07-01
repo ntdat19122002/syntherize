@@ -57,4 +57,30 @@ button{
     padding: 0 var(--size-100);
     position: relative;
 }
+
+.post-shopify-api-button{
+    letter-spacing: 0;
+    line-height: var(--component-chip-default-label-size-y);
+    position: relative;
+    text-transform: var(--component-chip-default-label-transform);
+
+    background-color: var(--color-restpost-background-default);
+    border-color: var(--color-restpost-border-default);
+    color: var(--color-restpost-text-default);
+
+    align-items: center;
+    border: 1px solid;
+    border-radius: var(--component-chip-default-container-border-radius);
+    display: inline-flex;
+    flex-direction: row;
+    flex-shrink: 0;
+    font: var(--font-mono-font-body-minor-base);
+    font-weight: 700;
+    height: var(--size-500);
+    justify-content: center;
+    min-width: 44px;
+    padding: 0 var(--size-100);
+    position: relative;
+}
+
 /* End: Css cho các button gọi về API Shopify */

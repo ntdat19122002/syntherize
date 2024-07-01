@@ -1,1 +1,1 @@
-from . import shopify_store,setting_inherit
+from . import shopify_store,setting_inherit,res_user_inherit

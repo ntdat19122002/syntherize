@@ -1,4 +1,4 @@
-<template>
+ApplicationCharge.vue<template>
     <div class="content">
         <div class="shopify-api-method-list">
             <GetAPIShopify

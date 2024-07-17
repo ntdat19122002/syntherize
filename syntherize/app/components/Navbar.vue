@@ -7,8 +7,16 @@
         </select>
         <div v-if="navbar_section === 'rest-api'">
             <div v-for="menu_item in rest_api_menu">
-                <div class="navbar-item">
+                <div class="navbar-item" v-if="typeof (menu_item) == 'list'">
                     <router-link :to="{name:menu_item}">{{ menu_item }}</router-link>
+                </div>
+                <div v-else>
+                    <div v-for="(sub_nav_bar_item_list,navbar_item_name) in menu_item">
+                        <div class="navbar-item">{{navbar_item_name}}</div>
+                        <div class="sub-navbar-item" v-for="sub_nav_bar_item in sub_nav_bar_item_list">
+                            <router-link :to="{name:sub_nav_bar_item}">{{ sub_nav_bar_item }}</router-link>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
@@ -57,12 +65,17 @@
 </template>
 
 <script>
-
+import menu from '../../config/menu.JSON'
 export default {
     data(){
         return{
-            navbar_section:'rest-api',
-            rest_api_menu:['AccessScope','StorefrontAccessToken']
+            navbar_section:"rest-api",
+            rest_api_menu: menu.rest_api_menu
+            // rest_api_menu:[
+            //     {"Access":["AccessScope","StorefrontAccessToken"]},
+            //     // {"Billing":["ApplicationCharge","ApplicationCredit","RecurringApplicationCharge","UsageCharge"]},
+            //     // {"Customer":["Customer","CustomerAddress"]}
+            // ]
         }
     }
 };

@@ -1,5 +1,40 @@
 {
-  "rest_api_menu":[
-      {"Access":["AccessScope","StorefrontAccessToken"]}
+  "rest_api_menu": [
+    {
+      "Access": [
+        "AccessScope",
+        "StorefrontAccessToken"
+      ]
+    },
+    {
+      "Billing": [
+        "ApplicationCharge",
+        "ApplicationCredit",
+        "RecurringApplicationCharge",
+        "UsageCharge"
+      ]
+    },
+    {
+      "Webhooks": [
+        "Webhook"
+      ]
+    }
+  ],
+  "royalty_menu": [
+    "Dashboard",
+    {
+      "Program": [
+        "Points",
+        "Referrals",
+        "Vip",
+        "Activity"
+      ]
+    },
+    "Customers",
+    "Performance",
+    "Branding",
+    "CustomerEmail",
+    "Nudges",
+    "Billing"
   ]
 }

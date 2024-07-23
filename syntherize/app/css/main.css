@@ -18,7 +18,9 @@ button{
     margin-left: 10px;
 }
 
-.shopify-api-method__result_header{
+.shopify-api-method__result__header{
+    display: flex;
+    justify-content: space-between;
     padding: 5px;
     width: 800px;
     font-weight: 550;
@@ -26,6 +28,10 @@ button{
     background: #263824;
     border-radius: 5px 5px 0 0;
     color: white;
+}
+
+.shopify-api-method__result__header__copy-to-clipboard{
+    cursor: pointer;
 }
 
 .shopify-api-method__result_content{

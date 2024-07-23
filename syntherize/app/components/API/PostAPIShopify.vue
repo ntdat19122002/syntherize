@@ -1,7 +1,7 @@
 <template>
     <div class="shopify-api-method">
         <div class="shopify-api-method__header">
-            <button @click="getAccessScope()" class="get-shopify-api-button">Get</button>
+            <button @click="getAccessScope()" class="post-shopify-api-button">Post</button>
             <span class="shopify-api-method__header__title">{{title}}</span>
         </div>
         <div v-if="body_data" class="shopify-api-method__input">
@@ -20,7 +20,7 @@ import ResultAPIShopify from "./ResultAPIShopify.vue";
 
 export default {
     components: {ResultAPIShopify},
-    props:['title','get_url','body_data'],
+    props:['title','url','body_data'],
     data() {
         return {
             data: null,
@@ -29,7 +29,8 @@ export default {
     },
     methods: {
         getAccessScope(){
-            axios.get(this.get_url,{
+            axios.post(this.url,{
+                jsonrpc:2.0,
                 params:this.body_data_temp
             }).then((res) => {
                 this.data = res.data

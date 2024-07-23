@@ -1,20 +1,10 @@
 <template>
     <div class="content">
         <div class="shopify-api-method-list">
-            <div class="shopify-api-method">
-                <div class="shopify-api-method__header">
-                    <button @click="postStoreFrontAccessScope()" class="post-shopify-api-button">Post</button>
-                    <span class="shopify-api-method__header__title">Retrieves a list of storefront access tokens that have been issued</span>
-                </div>
-                <div class="shopify-api-method__result">
-                    <div class="shopify-api-method__result_header">
-                        Result
-                    </div>
-                    <div class="shopify-api-method__result_content">
-                        {{ store_front_access_scope }}
-                    </div>
-                </div>
-            </div>
+            <PostAPIShopify
+                title="Creates a new StorefrontAccessToken"
+                get_url="/store_front_access_token"
+            />
             <GetAPIShopify
                 title="Retrieves a list of storefront access tokens that have been issued"
                 get_url="/store_front_access_token"
@@ -27,9 +17,10 @@
 
 import axios from "axios";
 import GetAPIShopify from "../../../components/API/GetAPIShopify.vue";
+import PostAPIShopify from "../../../components/API/PostAPIShopify.vue";
 
 export default {
-    components: {GetAPIShopify},
+    components: {PostAPIShopify, GetAPIShopify},
     data() {
         return {
             store_front_access_scope: null

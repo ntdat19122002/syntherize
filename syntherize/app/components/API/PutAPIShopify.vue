@@ -1,8 +1,8 @@
 <template>
     <div class="shopify-api-method">
         <div class="shopify-api-method__header">
-            <button @click="getAccessScope()" class="get-shopify-api-button">Get</button>
-            <span class="shopify-api-method__header__title">{{title}}</span>
+            <button @click="getAccessScope()" class="put-shopify-api-button">Put</button>
+            <span class="shopify-api-method__header__title">{{ title }}</span>
         </div>
         <div v-if="body_data && body_data_temp" class="shopify-api-method__input">
             <div v-for="(property_value, property) in body_data">
@@ -40,7 +40,8 @@ export default {
     },
     methods: {
         getAccessScope() {
-            axios.get(this.url, {
+            axios.put(this.url, {
+                jsonrpc: 2.0,
                 params: this.body_data_temp
             }).then((res) => {
                 this.data = res.data

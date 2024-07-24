@@ -9,7 +9,7 @@
             <Menu :menu="rest_api_menu"/>
         </div>
         <div v-if="navbar_section === 'graphql-api'">
-            graph api
+            <Menu :menu="graphql_menu"/>
         </div>
         <div v-else-if="navbar_section === 'app'">
             <Menu :menu="royalty_app_menu"/>
@@ -26,6 +26,7 @@ export default {
         return{
             navbar_section:"rest-api",
             rest_api_menu: menu.rest_api_menu,
+            graphql_menu: menu.graphql_menu,
             royalty_app_menu: menu.royalty_menu
         }
     }

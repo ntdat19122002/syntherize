@@ -6,22 +6,30 @@
                 url="/webhook"
                 :body_data="{
                     webhook_address:null,
-                    webhook_topic:null,
+                    webhook_topic:webhook_list,
                     webhook_format:'json'
                 }"
             />
             <GetAPIShopify
                 title="Retrieves a list of webhooks"
-                get_url="/webhook/list"
+                url="/webhook/list"
             />
             <GetAPIShopify
                 title="Receive a single Webhook"
-                get_url="/webhook"
+                url="/webhook"
                 :body_data='{webhook_id:null}'
             />
             <GetAPIShopify
                 title="Receive a count of all Webhooks"
-                get_url="/webhook/count"
+                url="/webhook/count"
+            />
+            <PutAPIShopify
+                title="Modify an existing Webhook"
+                url="/webhook/upgrade"
+                :body_data="{
+                    webhook_id:null,
+                    webhook_address:null,
+                }"
             />
         </div>
     </div>
@@ -32,9 +40,15 @@
 import axios from "axios";
 import GetAPIShopify from "../../../components/API/GetAPIShopify.vue";
 import PostAPIShopify from "../../../components/API/PostAPIShopify.vue";
-
+import PutAPIShopify from "../../../components/API/PutAPIShopify.vue";
+import webhook_list from "../../../../config/webhook.JSON"
 export default {
-    components: {PostAPIShopify, GetAPIShopify},
+    components: {PostAPIShopify, GetAPIShopify,PutAPIShopify},
+    data(){
+        return{
+            webhook_list: webhook_list
+        }
+    }
 };
 </script>
 

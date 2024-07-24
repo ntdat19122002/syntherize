@@ -21,13 +21,21 @@ class Webhook(http.Controller):
             'topic':kw['webhook_topic'],
             'format':kw['webhook_format'],
         })
-        return json.dumps(data)
+        return json.dumps(data.attributes)
 
     @http.route('/webhook',methods=['GET'], auth='public')
     def get_webhook(self, **kw):
         utility.init_shopify_session()
-        data = shopify.Webhook.find(id=kw.get('webhook_id'))
-        return json.dumps(data)
+        data = shopify.Webhook.find(kw.get('webhook_id'))
+        return json.dumps(data.attributes)
+
+    @http.route('/webhook/upgrade',type='json', methods=['PUT'], auth='public')
+    def put_webhook(self, **kw):
+        utility.init_shopify_session()
+        data = shopify.Webhook.find(kw.get('webhook_id'))
+        data.address = kw.get('webhook_address')
+        data.save()
+        return json.dumps(data.attributes)
 
     @http.route('/webhook/count', auth='public')
     def get_webhook_count(self, **kw):

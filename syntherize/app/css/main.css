@@ -89,4 +89,23 @@ button{
     position: relative;
 }
 
+.put-shopify-api-button{
+    background-color: var(--color-restput-background-default);
+    border-color: var(--color-restput-border-default);
+    color: var(--color-restput-text-default);
+
+    align-items: center;
+    border: 1px solid;
+    border-radius: var(--component-chip-default-container-border-radius);
+    display: inline-flex;
+    flex-direction: row;
+    flex-shrink: 0;
+    font: var(--font-mono-font-body-minor-base);
+    font-weight: 700;
+    height: var(--size-500);
+    justify-content: center;
+    min-width: 44px;
+    padding: 0 var(--size-100);
+    position: relative;
+}
 /* End: Css cho các button gọi về API Shopify */

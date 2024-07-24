@@ -36,5 +36,8 @@
     "CustomerEmail",
     "Nudges",
     "Billing"
+  ],
+  "graphql_menu": [
+    "Explorer"
   ]
 }

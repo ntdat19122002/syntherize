@@ -1,7 +1,7 @@
 <template>
     <div class="shopify-api-method">
         <div class="shopify-api-method__header">
-            <button @click="getAccessScope()" class="post-shopify-api-button">Post</button>
+            <button @click="getAccessScope()" class="del-shopify-api-button">Del</button>
             <span class="shopify-api-method__header__title">{{ title }}</span>
         </div>
         <div v-if="body_data && body_data_temp" class="shopify-api-method__input">

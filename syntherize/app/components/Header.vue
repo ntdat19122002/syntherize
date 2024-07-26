@@ -12,9 +12,9 @@
         <input type="text" placeholder="search customer name or email">
       </div>
     </div>
-    <div class="header-right">
+    <router-link :to="{name:'Profile'}" class="header-right" >
       ? TeststoreDat2
-    </div>
+    </router-link>
   </div>
 </template>
 

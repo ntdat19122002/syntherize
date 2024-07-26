@@ -18,6 +18,10 @@ button{
     margin-left: 10px;
 }
 
+.shopify-api-method__input input{
+    min-width: 400px;
+}
+
 .shopify-api-method__result__header{
     display: flex;
     justify-content: space-between;
@@ -94,6 +98,25 @@ button{
     border-color: var(--color-restput-border-default);
     color: var(--color-restput-text-default);
 
+    align-items: center;
+    border: 1px solid;
+    border-radius: var(--component-chip-default-container-border-radius);
+    display: inline-flex;
+    flex-direction: row;
+    flex-shrink: 0;
+    font: var(--font-mono-font-body-minor-base);
+    font-weight: 700;
+    height: var(--size-500);
+    justify-content: center;
+    min-width: 44px;
+    padding: 0 var(--size-100);
+    position: relative;
+}
+
+.del-shopify-api-button{
+    background-color: var(--color-restdel-background-default);
+    border-color: var(--color-restdel-border-default);
+    color: var(--color-restdel-text-default);
     align-items: center;
     border: 1px solid;
     border-radius: var(--component-chip-default-container-border-radius);

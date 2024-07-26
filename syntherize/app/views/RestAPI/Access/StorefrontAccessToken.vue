@@ -3,11 +3,11 @@
         <div class="shopify-api-method-list">
             <PostAPIShopify
                 title="Creates a new StorefrontAccessToken"
-                get_url="/store_front_access_token"
+                url="/store_front_access_token"
             />
             <GetAPIShopify
                 title="Retrieves a list of storefront access tokens that have been issued"
-                get_url="/store_front_access_token"
+                url="/store_front_access_token"
             />
         </div>
     </div>

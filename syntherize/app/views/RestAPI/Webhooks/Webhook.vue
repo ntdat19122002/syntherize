@@ -5,7 +5,7 @@
                 title="Create a new Webhook"
                 url="/webhook"
                 :body_data="{
-                    webhook_address:null,
+                    webhook_address:$store.ngrok_address,
                     webhook_topic:webhook_list,
                     webhook_format:'json'
                 }"
@@ -28,9 +28,21 @@
                 url="/webhook/upgrade"
                 :body_data="{
                     webhook_id:null,
-                    webhook_address:null,
+                    webhook_topic:webhook_list,
+                    webhook_address:$store.ngrok_address+'webhook',
                 }"
             />
+            <DelAPIShopify
+                title="Remove an existing Webhook"
+                url="/webhook/delete"
+                :body_data="{
+                    webhook_id:null,
+                    webhook_topic:webhook_list,
+                }"
+            />
+        </div>
+        <div class="webhook-data-list">
+
         </div>
     </div>
 </template>
@@ -42,8 +54,9 @@ import GetAPIShopify from "../../../components/API/GetAPIShopify.vue";
 import PostAPIShopify from "../../../components/API/PostAPIShopify.vue";
 import PutAPIShopify from "../../../components/API/PutAPIShopify.vue";
 import webhook_list from "../../../../config/webhook.JSON"
+import DelAPIShopify from "../../../components/API/DelAPIShopify.vue";
 export default {
-    components: {PostAPIShopify, GetAPIShopify,PutAPIShopify},
+    components: {DelAPIShopify, PostAPIShopify, GetAPIShopify,PutAPIShopify},
     data(){
         return{
             webhook_list: webhook_list

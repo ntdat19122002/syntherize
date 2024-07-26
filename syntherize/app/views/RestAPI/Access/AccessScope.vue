@@ -3,7 +3,7 @@
         <div class="shopify-api-method-list">
             <GetAPIShopify
                 title="Get a list of access scopes"
-                get_url="/access_scope"
+                url="/access_scope"
             />
         </div>
     </div>

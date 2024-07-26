@@ -10,6 +10,7 @@
 
 import Navbar from "./components/Navbar.vue";
 import Header from "./components/Header.vue";
+import axios from "axios";
 
 export default {
   name: "App",
@@ -22,9 +23,9 @@ export default {
       console.log('Test')
     }
   },
-  computed: {},
-  async mounted() {
-  }
+  created() {
+    this.$store.dispatch('fetchData');
+  },
 }
 </script>
 <style src="./css/variable.css"></style>
